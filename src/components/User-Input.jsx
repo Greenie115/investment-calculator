@@ -1,10 +1,49 @@
-function UserInput(){
-    return(
-        <>
-        <section id="user-input">
-        <h2>hello</h2>
-        </section>
-        </>
+import { useState } from "react";
+
+function UserInput() {
+
+    const [userInput, setUserInput] = useState({
+        initialInvestment: 10000,
+        annualInvestment: 5000,
+        expectedReturn: 5,
+        duration: 10
+    })
+
+    return (
+        <section id="user-input" >
+            <div className="input-group">
+                <p>
+                    <label>
+                        Initial Investment
+                    </label>
+                    <input
+                        type="number" required></input>
+                </p>
+                <p>
+                    <label>
+                        Annual Investment
+                    </label>
+                    <input
+                        type="number" required></input>
+                </p>
+            </div>
+            <div className="input-group">
+            <p>
+                <label>
+                    Expected Return
+                </label>
+                <input
+                    type="number" required></input>
+            </p>
+            <p>
+                <label>
+                    Duration
+                </label>
+                <input
+                    type="number" required></input>
+            </p>
+            </div>
+        </section >
     )
 };
 
