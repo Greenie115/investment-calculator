@@ -17,18 +17,22 @@ function handleChange(inputID, newValue) {
   setUserInput(prevValue => {
       return {
           ...prevValue,
-          [inputID]: newValue
+          [inputID]: +newValue
       }
   })
 }
+
+const isValidDuration = userInput.duration >= 1
 
   return (
     <>
     <Header />
     <UserInput 
-      onChange={handleChange}
+      resetInput={handleChange}
       Input={userInput}/>
-    <Results />
+      {isValidDuration ? <Results Input={userInput} /> : 
+      <p className="center">Please choose a duration greater than 0</p> }
+
     </>
   )
 }

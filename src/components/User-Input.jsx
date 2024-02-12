@@ -1,4 +1,4 @@
-function UserInput({ onChange, Input }) {
+function UserInput({ resetInput, Input }) {
 
     return (
         <section id="user-input" >
@@ -11,7 +11,7 @@ function UserInput({ onChange, Input }) {
                         value={Input.initialInvestment}
                         type="number" required
                         onChange={(event) => 
-                        onChange('initialInvestment', event.target.value)}
+                        resetInput('initialInvestment', event.target.value)}
                     ></input>
                 </p>
                 <p>
@@ -21,7 +21,7 @@ function UserInput({ onChange, Input }) {
                     <input
                         value={Input.annualInvestment}
                         type="number" required
-                        onChange={(event) => onChange('annualInvestment', event.target.value)}
+                        onChange={(event) => resetInput('annualInvestment', event.target.value)}
                     ></input>
                 </p>
             </div>
@@ -33,7 +33,7 @@ function UserInput({ onChange, Input }) {
                     <input
                         value={Input.expectedReturn}
                         type="number" required
-                        onChange={(event) => handleChange('expectedReturn', event.target.value)}
+                        onChange={(event) => resetInput('expectedReturn', event.target.value)}
                     ></input>
                 </p>
                 <p>
@@ -43,7 +43,7 @@ function UserInput({ onChange, Input }) {
                     <input
                         value={Input.duration}
                         type="number" required
-                        onChange={(event) => handleChange('duration', event.target.value )}
+                        onChange={(event) => resetInput('duration', event.target.value )}
                     ></input>
                 </p>
             </div>
